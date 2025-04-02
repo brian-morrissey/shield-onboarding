@@ -1,11 +1,11 @@
 cluster_config:
   # REQUIRED - The name of the cluster
-  name: "abcd-prod-local"
+  name: "test-shield-onboarding-7"
   # REQUIRED - Tags you want to apply to the metadata sent to the Sysdig Backend.
   tags:
-    cluster: "abcd-prod-local"
-    vz-vsadid: "8888"
-    vz-vastid: "FFFF"
+    cluster: "test-shield-onboarding-7"
+    vz-vsadid: "1234"
+    vz-vastid: "5678"
 
 sysdig_endpoint:
   # REQUIRED - The access key for the Sysdig Secure instance
@@ -23,9 +23,9 @@ cluster:
 
 proxy:
   # OPTIONAL - HTTP proxy to use for all HTTP requests
-  http_proxy: ""
+  http_proxy: "http://10.0.5.67:8080"
   # OPTIONAL - HTTPS proxy to use for all HTTPS requests
-  https_proxy: ""
+  https_proxy: "http://10.0.5.67:8080"
   # OPTIONAL - No proxy hosts and ips
   # If proxy is in use, exclude kubernetes cluster ip - kubectl get service kubernetes -o jsonpath='{.spec.clusterIP}'; echo
-  no_proxy: "4.4.4.4"
+  no_proxy: "172.20.0.1,localhost,127.0.0.1,.amazonaws.com,.aws.com,.amazon.com"
