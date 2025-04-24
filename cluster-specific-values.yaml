@@ -2,29 +2,29 @@
 # OCI Registry: jfrog.idonthaveany.boats
 cluster_config:
   # REQUIRED - The name of the cluster
-  name: "CHANGE_ME"
+  name: sysdig-eks-qa-9999-abcd
   # REQUIRED - Tags you want to apply to the metadata sent to the Sysdig Backend.
   tags:
-    cluster: "CHANGE_ME"
-    vz-vsadid: "CHANGE_ME"
-    vz-vastid: "CHANGE_ME"
-
+    cluster: sysdig-eks-qa-9999-abcd
+    vz-vsadid: abcd
+    vz-vastid: "9999"
 sysdig_endpoint:
   # REQUIRED IF NOT USING INSTALL.SH - The access key for the Sysdig Secure instance
   access_key:
-
 host:
-  priority_class:
-    # OPTIONAL - The name of the priority class, typically system-node-critical
-    name:
-
+  resources:
+    shield:
+      requests:
+        cpu: 250m
+        memory: 256Mi
+      limits:
+        cpu: 750m
+        memory: 750Mi
 cluster:
-
-proxy:
-  # OPTIONAL - HTTP proxy to use for all HTTP requests
-  http_proxy: ""
-  # OPTIONAL - HTTPS proxy to use for all HTTPS requests
-  https_proxy: ""
-  # OPTIONAL - NO_PROXY comma delimited hosts and ips
-  # If proxy is in use, exclude kubernetes cluster ip - kubectl get service kubernetes -o jsonpath='{.spec.clusterIP}'; echo 
-  no_proxy: ""
+  resources:
+    requests:
+      cpu: 500m
+      memory: 512Mi
+    limits:
+      cpu: 1500m
+      memory: 1536Mi

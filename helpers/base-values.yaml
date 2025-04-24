@@ -181,9 +181,9 @@ host_windows:
       memory: 1Gi
     requests:
       # The CPU request for the host shield
-      cpu: 250m
+      cpu: 150m
       # The memory request for the host shield
-      memory: 384Mi
+      memory: 184Mi
   # The annotations for the host shield workloads (metadata.annotations)
   workload_annotations: {}
   # The labels for the host shield workloads (metadata.labels)
@@ -454,9 +454,9 @@ cluster:
   resources:
     requests:
       # The CPU request for the cluster shield
-      cpu: 500m
+      cpu: 100m
       # The memory request for the cluster shield
-      memory: 512Mi
+      memory: 112Mi
     limits:
       # The CPU limit for the cluster shield
       cpu: 1500m
@@ -504,7 +504,7 @@ cluster:
       # The readiness probe failure threshold
       failureThreshold: 9
   # The number of replicas for the cluster shield
-  replica_count: 2
+  replica_count: 1
   update_strategy:
     # The update strategy
     type: RollingUpdate
